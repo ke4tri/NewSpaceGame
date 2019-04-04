@@ -62,7 +62,7 @@ export default class Ship {
     let posDelta = rotatePoint({x:0, y:-10}, {x:0,y:0}, (this.rotation-180) * Math.PI / 180);
     const particle = new Particle({
       lifeSpan: randomNumBetween(20, 40),
-      size: randomNumBetween(1, 3),
+      size: randomNumBetween(1, 10),
       position: {
         x: this.position.x + posDelta.x + randomNumBetween(-2, 2),
         y: this.position.y + posDelta.y + randomNumBetween(-2, 2)
@@ -86,7 +86,9 @@ export default class Ship {
     if(state.keys.right){
       this.rotate('RIGHT');
     }
-    if(state.keys.space && Date.now() - this.lastShot > 300){
+    //change the number value below to increase rate of fire.
+    //lower the number the faste the shots
+    if(state.keys.space && Date.now() - this.lastShot > 50){
       const bullet = new Bullet({ship: this});
       this.create(bullet, 'bullets');
       this.lastShot = Date.now();

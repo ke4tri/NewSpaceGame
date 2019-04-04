@@ -30,7 +30,7 @@ export class Reacteroids extends Component {
         down  : 0,
         space : 0,
       },
-      asteroidCount: 1,
+      asteroidCount: 2,
       currentScore: 0,
       topScore: localStorage['topscore'] || 0,
       inGame: false
@@ -92,6 +92,7 @@ export class Reacteroids extends Component {
     context.scale(this.state.screen.ratio, this.state.screen.ratio);
 
     // Motion trail
+    //Change background color with fillStyle
     context.fillStyle = '#b88b8b';
     context.globalAlpha = 0.4;
     context.fillRect(0, 0, this.state.screen.width, this.state.screen.height);
@@ -106,7 +107,8 @@ export class Reacteroids extends Component {
 
     // Check for colisions
     this.checkCollisionsWith(this.bullets, this.asteroids);
-    this.checkCollisionsWith(this.ship, this.asteroids);
+    // Commented out the below line to make ship fly through the asteroids
+    //this.checkCollisionsWith(this.ship, this.asteroids);
 
     // Remove or render
     this.updateObjects(this.particles, 'particles')
@@ -169,7 +171,7 @@ export class Reacteroids extends Component {
     let ship = this.ship[0];
     for (let i = 0; i < howMany; i++) {
       let asteroid = new Asteroid({
-        size: 80,
+        size: 100,
         position: {
           x: randomNumBetweenExcluding(0, this.state.screen.width, ship.position.x-60, ship.position.x+60),
           y: randomNumBetweenExcluding(0, this.state.screen.height, ship.position.y-60, ship.position.y+60)
@@ -249,11 +251,7 @@ export class Reacteroids extends Component {
         </div>
       )
     }
-    
-      // let styles = {
-        
-      //   backgroundColor: 'yellow',
-      // };
+  
 
     return (
       <div>
