@@ -2,6 +2,7 @@
 
  body {
   background-color: aquamarine !important;
+  z-index: 2;
   padding: 0;
   margin: 0;
   font-family: 'PT Mono', serif;
@@ -17,6 +18,7 @@
   width: 100%;
   height: 100%;
 }
+
 
 
 .current-score {

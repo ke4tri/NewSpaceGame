@@ -68,9 +68,13 @@ export class Reacteroids extends Component {
     window.addEventListener('resize',  this.handleResize.bind(this, false));
 
     const context = this.refs.canvas.getContext('2d');
+    
+
     this.setState({ context: context });
     this.startGame();
+    
     requestAnimationFrame(() => {this.update()});
+    //context.fillStyle("#ffffff");
   }
 
   componentWillUnmount() {
@@ -88,7 +92,7 @@ export class Reacteroids extends Component {
     context.scale(this.state.screen.ratio, this.state.screen.ratio);
 
     // Motion trail
-    context.fillStyle = '#000';
+    context.fillStyle = '#b88b8b';
     context.globalAlpha = 0.4;
     context.fillRect(0, 0, this.state.screen.width, this.state.screen.height);
     context.globalAlpha = 1;
@@ -240,16 +244,17 @@ export class Reacteroids extends Component {
           <p>{message}</p>
           <button
             onClick={ this.startGame.bind(this) }>
-            Try Again?
+            Try Again Bitches?
           </button>
         </div>
       )
     }
     
-      let styles = {
+      // let styles = {
         
-        backgroundColor: 'blue',
-      };
+      //   backgroundColor: 'yellow',
+      // };
+
     return (
       <div>
         { endgame }
@@ -259,7 +264,7 @@ export class Reacteroids extends Component {
           Use [A][S][W][D] or [←][↑][↓][→] to MOVE<br/>
           Use [SPACE] to SHOOT
         </span>
-        <canvas ref="canvas" style={styles}
+        <canvas id="canvas" ref="canvas" 
           width={this.state.screen.width * this.state.screen.ratio}
           height={this.state.screen.height * this.state.screen.ratio}
         />
