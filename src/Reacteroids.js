@@ -30,7 +30,7 @@ export class Reacteroids extends Component {
         down  : 0,
         space : 0,
       },
-      asteroidCount: 1,
+      asteroidCount: 2,
       currentScore: 0,
       topScore: localStorage['topscore'] || 0,
       inGame: false
@@ -92,9 +92,13 @@ export class Reacteroids extends Component {
     context.scale(this.state.screen.ratio, this.state.screen.ratio);
 
     // Motion trail
-    context.fillStyle = '#b88b8b';
+    //Change background color with fillStyle
+   // context.fillStyle = '#b88b8b';
+   //CLEARRECT BYPASSES THE DEFAULT CANVAS BACKGROUND AND OPENS UP THE 
+   //CSS TO WORK WITH THE CANVAS
+    context.clearRect(0,0, 2000,1000);
     context.globalAlpha = 0.4;
-    context.fillRect(0, 0, this.state.screen.width, this.state.screen.height);
+   //context.fillRect(0, 0, this.state.screen.width, this.state.screen.height);
     context.globalAlpha = 1;
 
     // Next set of asteroids
@@ -106,7 +110,8 @@ export class Reacteroids extends Component {
 
     // Check for colisions
     this.checkCollisionsWith(this.bullets, this.asteroids);
-    this.checkCollisionsWith(this.ship, this.asteroids);
+    // Commented out the below line to make ship fly through the asteroids
+    //this.checkCollisionsWith(this.ship, this.asteroids);
 
     // Remove or render
     this.updateObjects(this.particles, 'particles')
@@ -169,7 +174,7 @@ export class Reacteroids extends Component {
     let ship = this.ship[0];
     for (let i = 0; i < howMany; i++) {
       let asteroid = new Asteroid({
-        size: 80,
+        size: 100,
         position: {
           x: randomNumBetweenExcluding(0, this.state.screen.width, ship.position.x-60, ship.position.x+60),
           y: randomNumBetweenExcluding(0, this.state.screen.height, ship.position.y-60, ship.position.y+60)
@@ -249,25 +254,24 @@ export class Reacteroids extends Component {
         </div>
       )
     }
-    
-      // let styles = {
-        
-      //   backgroundColor: 'yellow',
-      // };
+  
 
     return (
       <div>
         { endgame }
-        <span className="score current-score" >Score: {this.state.currentScore}</span>
+         <span className="score current-score" >Score: {this.state.currentScore}</span>
         <span className="score top-score" >Top Score: {this.state.topScore}</span>
-        <span className="controls" >
-          Use [A][S][W][D] or [←][↑][↓][→] to MOVE<br/>
-          Use [SPACE] to SHOOT
+        <span className="title">
+        CRACK SHIP!!
         </span>
-        <canvas id="canvas" ref="canvas" 
+        <span className="controls" >
+          Use A  S  W  D  or  ←  ↑  ↓  → <br/>
+          Use SPACEBAR to SHOOT The Place up
+        </span>
+        <canvas className="canvas" ref="canvas" 
           width={this.state.screen.width * this.state.screen.ratio}
           height={this.state.screen.height * this.state.screen.ratio}
-        />
+        /> 
       </div>
     );
   }

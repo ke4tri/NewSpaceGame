@@ -5,16 +5,17 @@ export default class Asteroid {
   constructor(args) {
     this.position = args.position
     this.velocity = {
-      x: randomNumBetween(-1.5, 1.5),
-      y: randomNumBetween(-1.5, 1.5)
+      x: randomNumBetween(-1.5, .5),
+      y: randomNumBetween(-1.5, .3)
     }
     this.rotation = 0;
-    this.rotationSpeed = randomNumBetween(-1, 1)
+    this.rotationSpeed = randomNumBetween(0, 7)
     this.radius = args.size;
     this.score = (80/this.radius)*5;
     this.create = args.create;
     this.addScore = args.addScore;
-    this.vertices = asteroidVertices(8, args.size)
+    // Below is are the sides of the asteroids
+    this.vertices = asteroidVertices(2, args.size)
   }
 
   destroy(){

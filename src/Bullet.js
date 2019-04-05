@@ -38,9 +38,9 @@ export default class Bullet {
     context.translate(this.position.x, this.position.y);
     context.rotate(this.rotation * Math.PI / 180);
     context.fillStyle = '#FFF';
-    context.lineWidth = 0,2;
+    context.lineWidth = 7,2;
     context.beginPath();
-    context.arc(0, 0, 2, 0, 2 * Math.PI);
+    context.arc(0, 0, 9, 0, 2 * Math.PI);
     context.closePath();
     context.fill();
     context.restore();

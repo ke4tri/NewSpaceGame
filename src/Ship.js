@@ -62,7 +62,7 @@ export default class Ship {
     let posDelta = rotatePoint({x:0, y:-10}, {x:0,y:0}, (this.rotation-180) * Math.PI / 180);
     const particle = new Particle({
       lifeSpan: randomNumBetween(20, 40),
-      size: randomNumBetween(1, 3),
+      size: randomNumBetween(1, 10),
       position: {
         x: this.position.x + posDelta.x + randomNumBetween(-2, 2),
         y: this.position.y + posDelta.y + randomNumBetween(-2, 2)
@@ -86,7 +86,9 @@ export default class Ship {
     if(state.keys.right){
       this.rotate('RIGHT');
     }
-    if(state.keys.space && Date.now() - this.lastShot > 300){
+    //change the number value below to increase rate of fire.
+    //lower the number the faste the shots
+    if(state.keys.space && Date.now() - this.lastShot > 50){
       const bullet = new Bullet({ship: this});
       this.create(bullet, 'bullets');
       this.lastShot = Date.now();
@@ -121,11 +123,21 @@ export default class Ship {
     context.fillStyle = '#000000';
     context.lineWidth = 2;
     context.beginPath();
-    context.moveTo(0, -15);
-    context.lineTo(10, 10);
-    context.lineTo(5, 7);
-    context.lineTo(-5, 7);
-    context.lineTo(-10, 10);
+    ////COMMENTED OUT SECTION BELOW IS THE STANDARD 'SHIP'
+    // context.moveTo(0, -15);
+    // context.lineTo(10, 10);
+    // context.lineTo(5, 7);
+    // context.lineTo(-5, 7);
+    // context.lineTo(-10, 10);
+   // context.moveTo(-18, -23);
+    ////MY BASIC SHIP IS BELOW  
+    context.lineTo(-20, 23);
+    context.lineTo(-7, 22);
+    context.lineTo(20, 22);
+    context.lineTo(11,-20);
+    context.lineTo(-10, -20);
+    context.lineTo(-16, 12);
+
     context.closePath();
     context.fill();
     context.stroke();
