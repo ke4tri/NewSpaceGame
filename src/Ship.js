@@ -123,6 +123,7 @@ export default class Ship {
     context.fillStyle = '#000000';
     context.lineWidth = 2;
     context.beginPath();
+    ////COMMENTED OUT SECTION BELOW IS THE STANDARD 'SHIP'
     // context.moveTo(0, -15);
     // context.lineTo(10, 10);
     // context.lineTo(5, 7);
@@ -156,7 +157,6 @@ export default class Ship {
     context.lineTo(-10, -20);
     context.lineTo(-16, 12);
     context.lineTo(-18,17);
-    
     context.closePath();
     context.fill();
     context.stroke();

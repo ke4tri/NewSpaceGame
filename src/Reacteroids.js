@@ -93,9 +93,10 @@ export class Reacteroids extends Component {
 
     // Motion trail
     //Change background color with fillStyle
-    context.fillStyle = '#b88b8b';
+   // context.fillStyle = '#b88b8b';
+    context.clearRect(0,0, 2000,1000);
     context.globalAlpha = 0.4;
-    context.fillRect(0, 0, this.state.screen.width, this.state.screen.height);
+   //context.fillRect(0, 0, this.state.screen.width, this.state.screen.height);
     context.globalAlpha = 1;
 
     // Next set of asteroids
@@ -258,11 +259,14 @@ export class Reacteroids extends Component {
         { endgame }
         <span className="score current-score" >Score: {this.state.currentScore}</span>
         <span className="score top-score" >Top Score: {this.state.topScore}</span>
+        <div  >
+          Crack Ship!
+        </div>
         <span className="controls" >
           Use [A][S][W][D] or [←][↑][↓][→] to MOVE<br/>
           Use [SPACE] to SHOOT
         </span>
-        <canvas id="canvas" ref="canvas" 
+        <canvas className="canvas" ref="canvas" 
           width={this.state.screen.width * this.state.screen.ratio}
           height={this.state.screen.height * this.state.screen.ratio}
         />
