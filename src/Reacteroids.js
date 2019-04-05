@@ -94,6 +94,8 @@ export class Reacteroids extends Component {
     // Motion trail
     //Change background color with fillStyle
    // context.fillStyle = '#b88b8b';
+   //CLEARRECT BYPASSES THE DEFAULT CANVAS BACKGROUND AND OPENS UP THE 
+   //CSS TO WORK WITH THE CANVAS
     context.clearRect(0,0, 2000,1000);
     context.globalAlpha = 0.4;
    //context.fillRect(0, 0, this.state.screen.width, this.state.screen.height);
@@ -257,19 +259,19 @@ export class Reacteroids extends Component {
     return (
       <div>
         { endgame }
-        <span className="score current-score" >Score: {this.state.currentScore}</span>
+         <span className="score current-score" >Score: {this.state.currentScore}</span>
         <span className="score top-score" >Top Score: {this.state.topScore}</span>
-        <div  >
-          Crack Ship!
-        </div>
+        <span className="title">
+        CRACK SHIP!!
+        </span>
         <span className="controls" >
-          Use [A][S][W][D] or [←][↑][↓][→] to MOVE<br/>
-          Use [SPACE] to SHOOT
+          Use A  S  W  D  or  ←  ↑  ↓  → <br/>
+          Use SPACEBAR to SHOOT The Place up
         </span>
         <canvas className="canvas" ref="canvas" 
           width={this.state.screen.width * this.state.screen.ratio}
           height={this.state.screen.height * this.state.screen.ratio}
-        />
+        /> 
       </div>
     );
   }

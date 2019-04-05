@@ -130,33 +130,14 @@ export default class Ship {
     // context.lineTo(-5, 7);
     // context.lineTo(-10, 10);
    // context.moveTo(-18, -23);
-    context.lineTo(-14, 23);
-    context.lineTo(-13, 20);
-    context.lineTo(-12, 18);
-    context.lineTo(-11, 16);
-    context.lineTo(-10, 16);
-    context.lineTo(-9, 21);
-    context.lineTo(-8, 20);
-    context.lineTo(-7, 17);
-    context.lineTo(-6, 17);
-    context.lineTo(-5, 22);
-    context.lineTo(-4, 23);
-    context.lineTo(-2, 22);
-    context.lineTo(4, 22);
-    context.lineTo(4, 17);
-    context.lineTo(6, 16);
-    context.lineTo(8, 17);
-    context.lineTo(9, 21);
-    context.lineTo(10, 23);
-    context.lineTo(14, 23);
+    ////MY BASIC SHIP IS BELOW  
+    context.lineTo(-20, 23);
+    context.lineTo(-7, 22);
     context.lineTo(20, 22);
-    context.lineTo(20, 17);
-    context.lineTo(16, 12);
     context.lineTo(11,-20);
-    context.lineTo(0,-24);
     context.lineTo(-10, -20);
     context.lineTo(-16, 12);
-    context.lineTo(-18,17);
+
     context.closePath();
     context.fill();
     context.stroke();

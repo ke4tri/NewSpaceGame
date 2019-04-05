@@ -5,12 +5,13 @@
   z-index: 2;
   padding: 0;
   margin: 0;
-  font-family: 'PT Mono', serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif serif;
   color: #ffffff;
 }
  canvas {
   /* display: block; */
-  background-image: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg');
+  background-image: url('http://www.nasa.gov/sites/default/files/thumbnails/image/stsci-h-p1709a-m2000x1500.png');
+  /* background-image: url('http://www.nasa.gov/sites/default/files/thumbnails/image/stsci-h-p1709a-m2000x1500.png'); */
 
   position: absolute;
   top: 0;
@@ -21,33 +22,43 @@
   height: 100%;
 }
 
-.canvas {
-}
-
 .current-score {
-  left: 20px;
+  left: 30px;
 }
 .top-score {
-  right: 20px;
+  right: 30px;
 }
 .score {
   display: block;
   position: absolute;
   top: 15px;
   z-index: 1;
-  font-size: 20px;
+  font-size: 30px;
 }
 .controls {
+  display: block;
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.title {
   display: block;
   position: absolute;
   top: 15px;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 1;
-  font-size: 11px;
+  font-size: 45px;
   text-align: center;
   line-height: 1.6;
 }
+
 .endgame{
   position: absolute;
   top: 50%;
