@@ -7,13 +7,12 @@ making it your own.
 This was built with using the react transform boilerplate.
 [react-transform-boilderplate-link](https://www.npmjs.com/package/react-transform-boilerplate)
 
-## Install
-npm install
+## Installj
+Clone repo,
+npm install,
 npm start
 
 ## Play
-
-Open http://localhost:3000
 
 # Screen Shot
 
