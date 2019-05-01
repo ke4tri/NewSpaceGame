@@ -7,7 +7,7 @@ making it your own.
 This was built with using the react transform boilerplate.
 [react-transform-boilderplate-link](https://www.npmjs.com/package/react-transform-boilerplate)
 
-## Installj
+## Install
 Clone repo,
 npm install,
 npm start
