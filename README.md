@@ -1,4 +1,4 @@
-# CrackShip
+# TrashShip
 A implementation of the classic Asteroids game using React and Canvas in es6.
 Just clone or fork and run commands below in install with in the terminal.  Code
 is noted so it will be easier for you to start playing around with the code and 
